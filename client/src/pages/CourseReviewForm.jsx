@@ -4,7 +4,7 @@ import Header from "../components/Header";
 const CourseReviewForm = () => {
   return (
     <>
-      <Header />
+      <Header/>
       <div>
         Course Review Form Will go Here!
         <p>Add menu of all existing courses so user can select which to review</p>

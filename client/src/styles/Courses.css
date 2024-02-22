@@ -2,6 +2,8 @@
     text-align: center;
 }
 
-.course_separator {
+.single_course {
     margin-bottom: 50px;
+    border-style: groove;
+    max-width: 50%;
 }

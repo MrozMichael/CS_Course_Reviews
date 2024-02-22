@@ -3,12 +3,12 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home";
-import Tasks from "./pages/Tasks";
 import { CoursesProvider } from "./context/CoursesContext";
 import Form from "./pages/Form";
 import Courses from "./pages/Courses";
 import CourseReviewForm from "./pages/CourseReviewForm";
 import CourseDetails from "./components/CourseDetails";
+import DetailedCoursePage from "./pages/DetailedCoursePage";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/courses/:id",
-    element: <CourseDetails/>
+    element: <DetailedCoursePage/>
   }
 ]);
 

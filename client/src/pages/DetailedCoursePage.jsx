@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import "../styles/Courses.css";
-import { useCourses } from "../context/CoursesContext";
 import CourseDetails from "../components/CourseDetails";
-import { useParams } from "react-router-dom";
 
-const CourseDetails = ({course}) => {
+const DetailedCoursePage = ({course}) => {
   return (
     <>
       <Header />
@@ -14,4 +12,4 @@ const CourseDetails = ({course}) => {
   );
 };
 
-export default Courses;
+export default DetailedCoursePage;

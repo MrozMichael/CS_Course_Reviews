@@ -17,7 +17,7 @@ const Courses = () => {
         (
           <div className="courses_list">
             {courses.map(course => (
-              <div className="course_separator">
+              <div className="single_course">
               <Course course={course}/>
               </div>
             ))}
