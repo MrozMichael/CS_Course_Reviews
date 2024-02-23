@@ -1,9 +1,9 @@
 .courses_list {
     text-align: center;
+    margin: auto;
 }
 
 .single_course {
     margin-bottom: 50px;
     border-style: groove;
-    max-width: 50%;
 }
