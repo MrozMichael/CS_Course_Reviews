@@ -1,29 +1,31 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+
 
 const CoursesContext = createContext();
 
 export const useCourses = () => useContext(CoursesContext);
 
 export const CoursesProvider = ({ children }) => {
-  const [courses, setCourses] = useState([
-    {
-      id: 1,
-      name: "CSCI 1110",
-      description: "Intro to CS",
-      reviews: [],
-      avgRating: 4.7,
-      avgDifficulty: 3.2,
-    },
-    {
-      id: 2,
-      name: "CSCI 1315",
-      description: "Discrete Math",
-      reviews: ["Dr. DeGagne is great.", "Fun course!"],
-      avgRating: 5,
-      avgDifficulty: 4.6,
-    },
-  ]);
+  const [courses, setCourses] = useState([]);
 
+  useEffect( () => {
+    const fetchCourses = async() => {
+      try {
+        const response = await fetch(import.meta.env.VITE_COURSES_API);
+        if (!response.ok) {
+          throw new Error("Error with Network Response");
+        }
+        const data = await response.json();
+        setCourses(data);
+      }
+      catch(error) { 
+        console.error("Failed to fetch courses,", error);
+      }
+    };
+    fetchCourses();
+  }, [])
+
+  //refactor rest of methods to connect with backend
   const handleAdd = ({ name, description }) => {
     const newCourse = {
       id: courses.length + 1,
