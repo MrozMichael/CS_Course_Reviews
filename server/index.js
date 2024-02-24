@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import courseRouter from './routes/course.route.js'
+import reviewRouter from './routes/review.route.js'
 import cors from 'cors'
 
 dotenv.config()
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/courses", courseRouter)
+app.use("/api/reviews", reviewRouter)
 
 app.listen(process.env.PORT, () => {
     console.log("App listening on port", process.env.PORT)
