@@ -6,10 +6,9 @@ import { useParams } from "react-router-dom";
 import { useCourses } from "../context/CoursesContext";
 
 const DetailedCoursePage = () => {
-  const { courses } = useCourses()
-  console.log('detailed coursepae, courses=', courses)
-  const {id} = useParams();
-  const course = courses.find((c) => c._id == id)
+  const { courses } = useCourses();
+  const { id } = useParams();
+  const course = courses.find((c) => c._id == id);
   return (
     <>
       <Header />
