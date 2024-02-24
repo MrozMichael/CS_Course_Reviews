@@ -25,7 +25,6 @@ const Courses = () => {
         ) : 
         (
           <>
-          <h2>Failed to load courses...</h2>
           </>
         )
       }

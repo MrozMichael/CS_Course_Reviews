@@ -1,19 +1,18 @@
-import { useParams } from "react-router-dom";
-import { useCourses } from "../context/CoursesContext";
+import "../styles/Courses.css"
 
-function CourseDetails() {
-    const { courses } = useCourses();
-    const { id } = useParams();
-    const course = courses.find((c) => c._id == id)
-    console.log('In coursedteails component, course is', courses)
+function CourseDetails({ course }) {
     //todo: replace reviews array with <Review /> component
     return (
-        <div className="course">
-           <h2>Course Title: {course.courseName}</h2>
-           <h3>Course Description: {course.description}</h3>
+      <>
+        {course != null ?
+        (
+          <div className="courseDetails">
+           <h2>{course.courseName}</h2>
+           <h3>{course.description}</h3>
             {course.reviews.length > 0 ? 
               (
                 <ul style={{listStyleType: "none"}}>
+                  <h3>Course Reviews</h3>
                     {course.reviews.map((review) => <li>{review}</li>) }
                 </ul>
               ) :
@@ -23,6 +22,13 @@ function CourseDetails() {
             
             } 
         </div>
+    ) : 
+    (
+      <div>
+        <h3>Failed to load course :(</h3>
+      </div>
+    )}
+    </>
     )
 }
 
