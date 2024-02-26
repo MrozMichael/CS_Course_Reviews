@@ -58,3 +58,4 @@ export async function updateCourse(req, res) {
       res.status(500).send(e);
     }
   }
+  
