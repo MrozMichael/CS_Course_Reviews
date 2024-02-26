@@ -1,6 +1,5 @@
 import mongoose, { Schema } from "mongoose";
 
-//todo: look into how review objects can get added to review array
 const courseSchema = new mongoose.Schema(
     {
         courseName: {
