@@ -1,7 +1,7 @@
 import "../styles/Courses.css"
 
 function CourseDetails({ course }) {
-    //todo: replace reviews array with <Review /> component
+    //todo: replace reviews array with <Review /> components
     return (
       <>
         {course != null ?
@@ -24,9 +24,8 @@ function CourseDetails({ course }) {
         </div>
     ) : 
     (
-      <div>
-        <h3>Failed to load course :(</h3>
-      </div>
+      <>
+      </>
     )}
     </>
     )
