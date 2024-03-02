@@ -59,3 +59,13 @@ export async function updateCourse(req, res) {
     }
   }
   
+  /*review object use cases:
+
+  -create review: can call updateCourse() after locally adding review to course.reviews
+  - delete review: can call updateCourse() after locally removing review from course.reviews
+  - edit review: updateCourse() after locally editing it 
+  - get reviews: no call needed, reviews retrieved w/ course GET req. 
+
+  ie: no need to add more routes. handle reviews in front end only (?)
+
+  */
